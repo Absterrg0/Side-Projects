@@ -19,6 +19,13 @@ export default function CreateTodo() {
             alert("Error adding todo")
         }
     }
+    const handleDelete= async ()=>{
+        try{
+            const res = await axios.delete("http://localhost:3000/api/todos")
+        }catch(e){
+            console.error(e)
+        }
+    }
     return (
         <div>
             <div className="border-2 rounded p-4">
@@ -34,7 +41,11 @@ export default function CreateTodo() {
                         setDescription(e.target.value)
                     }} className="border-2 p-2" type="text" placeholder="Set Description" />
                 </div>
-                <button onClick={handleClick} className="bg-gray-800 text-white p-2 rounded ">Create Todo</button>
+                    <div className="flex justify-between">
+                    <button onClick={handleClick} className="bg-gray-800 text-white p-2 rounded ">Create Todo</button>
+                    <button onClick={handleDelete} className="bg-gray-800 text-white p-2 rounded ">Delete All Todo</button>
+                    </div>
+                
             </div>
         </div>
     );

@@ -11,3 +11,14 @@ export async function GET(){
         console.log(e);
     }
 }
+
+
+export async function DELETE() {
+  try {
+    await client.todo.deleteMany(); // Delete all rows in the `todo` table
+    return NextResponse.json({ message: 'All todos deleted' });
+  } catch (error) {
+    console.error('Error deleting todos:', error);
+    return NextResponse.error();
+  }
+}

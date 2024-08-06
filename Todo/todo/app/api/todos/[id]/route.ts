@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import  client  from '@/db'; // Adjust import based on your setup
-import { lstat } from 'fs';
 
 export async function PUT(request: Request, { params }: { params: { id: string } }) {
   try {
