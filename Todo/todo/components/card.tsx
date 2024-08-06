@@ -10,7 +10,7 @@ export default function TodoInfo({title,description,completed}:todoProps){
             <div className="border rounded-sm p-3 m-3">
                 Title:{title} <br />
                 Description:{description} <br />
-                Completed:{completed ?"Completed":"To be completed"}
+                Status:{completed ?"Completed":"To be completed"}
             </div>
         </div>
     </div>
